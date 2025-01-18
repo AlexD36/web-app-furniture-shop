@@ -5,9 +5,7 @@
 ![HTML](https://img.shields.io/badge/HTML-5-orange)  ![CSS](https://img.shields.io/badge/CSS-3-blue)  ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)  
 
 
-
-https://github.com/user-attachments/assets/c58d3e14-2d8e-4535-9561-254d73043b13
-
+https://github.com/user-attachments/assets/1dd36d03-389a-4cc4-b559-662de8a573f8
 
 
 ## **Overview**
