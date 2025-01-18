@@ -4,6 +4,12 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen) 
 ![HTML](https://img.shields.io/badge/HTML-5-orange)  ![CSS](https://img.shields.io/badge/CSS-3-blue)  ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)  
 
+
+
+https://github.com/user-attachments/assets/c58d3e14-2d8e-4535-9561-254d73043b13
+
+
+
 ## **Overview**
 
 This project is a complete furniture e-commerce platform, consisting of both a backend and a frontend. The backend, developed with **Java** and **Spring Boot**, provides RESTful APIs for managing furniture products, user accounts, orders, and shopping carts. The frontend, built using **HTML**, **CSS**, and a bit of **JavaScript**, delivers an intuitive and visually appealing interface for browsing and purchasing furniture.
