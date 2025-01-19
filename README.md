@@ -1,15 +1,18 @@
-# E-Commerce Backend with Spring Boot
+# Furniture E-Commerce Platform
 
 ![Java](https://img.shields.io/badge/Java-17+-brightgreen) 
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen) 
-![H2 Database](https://img.shields.io/badge/Database-H2-blue) 
-![Maven](https://img.shields.io/badge/Build-Maven-orange)
+![HTML](https://img.shields.io/badge/HTML-5-orange)  ![CSS](https://img.shields.io/badge/CSS-3-blue)  ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)  
+
+
+https://github.com/user-attachments/assets/6e865b4d-e12a-4255-85df-66c7bc331901
+
 
 ## **Overview**
 
-This project is a backend system for an e-commerce application, built using **Java** and **Spring Boot**. It provides RESTful APIs for managing products, users, orders, and shopping carts. The backend is designed to be scalable, modular, and secure, following best practices for web application development.
+This project is a complete furniture e-commerce platform, consisting of both a backend and a frontend. The backend, developed with **Java** and **Spring Boot**, provides RESTful APIs for managing furniture products, user accounts, orders, and shopping carts. The frontend, built using **HTML**, **CSS**, and a bit of **JavaScript**, delivers an intuitive and visually appealing interface for browsing and purchasing furniture.
 
-🛠️ Note: Security is temporarily disabled to allow testing of the APIs. This is for development purposes only.
+🛠️ Note: Security is temporarily disabled to facilitate API testing during development.
 
 ---
 
@@ -20,23 +23,29 @@ This project is a backend system for an e-commerce application, built using **Ja
 - Role-based access control (Admin and Customer).
 - CRUD operations for user profiles.
 
-### **Product Management**
-- CRUD operations for products.
+### **Furniture Product Management**
+- CRUD operations for furniture items.
 - Category-based product organization.
 - Product listing with pagination and filtering.
 
 ### **Order Management**
-- Place, view, and manage orders.
+- Place, view, and manage furniture orders.
 - Order history for users.
 - Status updates for orders (e.g., pending, shipped, delivered).
 
 ### **Shopping Cart**
-- Add, update, and remove items from the cart.
-- Calculate cart totals dynamically.
+- Add, update, and remove furniture items from the cart.
+- Dynamically calculate cart totals.
 
 ### **Category Management**
-- Organize products by categories.
+- Organize furniture items by categories.
 - Manage categories via admin panel.
+
+### **Frontend Integration**
+- The frontend application enhances user experience by providing:
+  - A clean and responsive UI for browsing furniture products.
+  - Real-time updates for product listings and cart changes.
+  - Smooth workflows for placing orders and managing user accounts.
 
 ---
 
@@ -50,6 +59,9 @@ This project is a backend system for an e-commerce application, built using **Ja
 - **H2 Database**: Lightweight in-memory database for rapid development and testing.
 - **JPA/Hibernate**: ORM for database operations.
 
+### **Frontend**
+- **HTML**, **CSS**, and **JavaScript**: Technologies used to create the user interface.
+
 ### **Tools & Build**
 - **Maven**: Dependency management and build automation.
 - **Lombok**: Reduce boilerplate code.
@@ -57,9 +69,7 @@ This project is a backend system for an e-commerce application, built using **Ja
 
 ### **Testing**
 - **JUnit**: Unit testing.
-- - **Swagger**
-  - **Postman**: Manual API testing.
-
+- **Postman**: Manual API testing.
 
 ---
 
@@ -70,37 +80,35 @@ src/
 ├── main/
 │   ├── java/
 │   │   └── com/
-│   │       └── dn/
-│   │           └── shop/
-│   │               ├── config/              # Configuration classes
-│   │               │   ├── SecurityConfig   # Security configuration
-│   │               │   └── SwaggerConfig    # API documentation config
-│   │               ├── controller/          # REST API controllers
-│   │               │   ├── CategoryController
-│   │               │   ├── OrderController
-│   │               │   ├── ProductController
-│   │               │   ├── TestController
-│   │               │   └── UserController
-│   │               ├── model/               # Data models
-│   │               │   ├── dto/             # Data Transfer Objects
-│   │               │   │   ├── cart/        # Cart-related DTOs
-│   │               │   │   ├── category/    # Category-related DTOs
-│   │               │   │   ├── order/       # Order-related DTOs
-│   │               │   │   ├── product/     # Product-related DTOs
-│   │               │   │   └── user/        # User-related DTOs
-│   │               │   └── entity/          # JPA entities
-│   │               ├── repository/          # Data access layer
-│   │               ├── service/             # Business logic
-│   │               ├── util/                # Utility classes
-│   │               └── ShopApplication.java # Main application class
+│   │       └── furniture/
+│   │           ├── config/              # Configuration classes
+│   │           │   ├── SecurityConfig   # Security configuration
+│   │           │   └── SwaggerConfig    # API documentation config
+│   │           ├── controller/          # REST API controllers
+│   │           │   ├── CategoryController
+│   │           │   ├── OrderController
+│   │           │   ├── ProductController
+│   │           │   ├── CartController
+│   │           │   └── UserController
+│   │           ├── model/               # Data models
+│   │           │   ├── dto/             # Data Transfer Objects
+│   │           │   │   ├── cart/        # Cart-related DTOs
+│   │           │   │   ├── category/    # Category-related DTOs
+│   │           │   │   ├── order/       # Order-related DTOs
+│   │           │   │   ├── product/     # Product-related DTOs
+│   │           │   │   └── user/        # User-related DTOs
+│   │           │   └── entity/          # JPA entities
+│   │           ├── repository/          # Data access layer
+│   │           ├── service/             # Business logic
+│   │           ├── util/                # Utility classes
+│   │           └── FurnitureApplication.java # Main application class
 │   └── resources/
 │       └── application.properties          # Application configuration
 └── test/
     └── java/
         └── com/
-            └── dn/
-                └── shop/
-                    └── ShopApplicationTests.java
+            └── furniture/
+                └── FurnitureApplicationTests.java
 ```
 
 ---
@@ -117,16 +125,15 @@ src/
 - **GET** `/api/users/{id}` - Get user details by ID
 
 ### **Cart Management**
-(Included in User Controller)
-- **POST** `/api/users/{userId}/cart` - Add product to user's cart
-- **DELETE** `/api/users/{userId}/cart/{productId}` - Remove product from cart
+- **POST** `/api/users/{userId}/cart` - Add furniture item to user's cart
+- **DELETE** `/api/users/{userId}/cart/{productId}` - Remove furniture item from cart
 
-### **Product Management**
-- **GET** `/api/v1/products` - Get all products (with pagination)
-- **GET** `/api/v1/products/{id}` - Get product by ID
-- **POST** `/api/v1/products` - Create new product
-- **PUT** `/api/v1/products/{id}` - Update existing product
-- **DELETE** `/api/v1/products/{id}` - Delete product
+### **Furniture Product Management**
+- **GET** `/api/v1/products` - Get all furniture items (with pagination)
+- **GET** `/api/v1/products/{id}` - Get furniture item by ID
+- **POST** `/api/v1/products` - Create new furniture item
+- **PUT** `/api/v1/products/{id}` - Update existing furniture item
+- **DELETE** `/api/v1/products/{id}` - Delete furniture item
 
 ### **Order Management**
 - **POST** `/api/orders` - Create a new order
@@ -136,9 +143,6 @@ src/
 ### **Category Management**
 - **GET** `/api/categories` - Get all categories
 - **POST** `/api/categories` - Create new category
-
-### **Testing Endpoint**
-- **GET** `/test` - Test endpoint returning "Test431"
 
 All endpoints are documented with Swagger UI, accessible at:
 `http://localhost:8080/swagger-ui.html`
@@ -156,12 +160,11 @@ API documentation is available at:
 
 ### **Clone the Repository**
 
-git clone https://github.com/AlexD36/dn-ecommerce-springboot-app
+```bash
+git clone https://github.com/AlexD36/furniture-ecommerce-springboot-app
 
-cd dn-ecommerce-springboot-app
-
-
-
+cd furniture-ecommerce-springboot-app
+```
 
 ### **Run the Application**
 1. Build the project:
@@ -188,3 +191,5 @@ cd dn-ecommerce-springboot-app
 - Ensure that all tests pass before creating a pull request.
 
 ---
+
+
